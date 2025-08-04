@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cytra's IG Account Ban</title>
+<style>
+  body {
+    background: #000;
+    color: #0f0;
+    font-family: monospace;
+    text-align: center;
+    padding-top: 8%;
+    overflow: hidden;
+    text-shadow: 0 0 5px #0f0;
+  }
+  h1 {
+    font-size: 2rem;
+    animation: glitch 0.5s infinite;
+  }
+  h2 {
+    font-size: 1.3rem;
+    color: #0f0;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+  p, input, button {
+    font-size: 1.1rem;
+  }
+  input, button {
+    padding: 0.7rem 1.2rem;
+    background: #111;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #0f0;
+    margin: 0.5rem;
+  }
+  button:hover {
+    background: #0f0;
+    color: #000;
+    cursor: pointer;
+  }
+  @keyframes glitch {
+    0% { transform: none; opacity: 1; }
+    20% { transform: skew(-3deg, -1deg); opacity: 0.8; }
+    40% { transform: skew(3deg, 1deg); opacity: 0.6; }
+    60% { transform: skew(-1deg, 2deg); opacity: 0.9; }
+    80% { transform: skew(2deg, -2deg); opacity: 0.7; }
+    100% { transform: none; opacity: 1; }
+  }
+  video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+    z-index: 9999;
+    display: none;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      rgba(0, 255, 0, 0.03) 0px,
+      rgba(0, 255, 0, 0.03) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<h1>⚠️ CYTRA’S IG ACCOUNT BAN SYSTEM</h1>
+<h2>Welcome to Cytra’s Secret Terminal</h2>
+<p>Enter IG username to begin purge:</p>
+<input id="igUser" placeholder="IG username" />
+<button id="banButton">LAUNCH</button>
+
+<video id="scaryVideo" src="lv_0_20250625182535.mp4" muted loop></video>
+<audio id="scarySound" src="kuma.m4a" loop></audio>
+
+<script>
+  const btn = document.getElementById('banButton')
+  const video = document.getElementById('scaryVideo')
+  const sound = document.getElementById('scarySound')
+
+  btn.onclick = () => {
+    const username = document.getElementById('igUser').value.trim()
+    if (!username) {
+      alert('Error: Username required')
+      return
+    }
+
+    video.style.display = 'block'
+    video.play().catch(err => console.log(err))
+
+    sound.volume = 1.0
+    sound.play().catch(err => console.log(err))
+
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen().catch(() => {})
+    }
+
+    window.onbeforeunload = (e) => {
+      e.preventDefault()
+      return "Access Denied. You cannot leave Cytra's domain!"
+    }
+  }
+</script>
+
+</body>
+</html>
