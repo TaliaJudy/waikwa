@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cytra Hub - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow-md text-center">
+    <h1 class="text-3xl font-bold">Dashboard</h1>
+    <p class="mt-2 text-blue-100">Your central control panel</p>
+  </header>
+
+  <!-- Welcome & Date/Time -->
+  <section class="max-w-4xl mx-auto px-4 py-10 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Welcome back, <span class="text-blue-600">Cytra</span>!</h2>
+    <p id="datetime" class="text-gray-600 mb-2"></p>
+    <blockquote id="quote" class="italic text-gray-500"></blockquote>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 pb-10">
+    <a href="biography.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
+      <div class="text-blue-600 text-4xl mb-2">📖</div>
+      <h3 class="text-xl font-semibold">Biography</h3>
+    </a>
+    <a href="pics.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
+      <div class="text-yellow-500 text-4xl mb-2">🖼️</div>
+      <h3 class="text-xl font-semibold">Pics</h3>
+    </a>
+    <a href="socials.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
+      <div class="text-indigo-500 text-4xl mb-2">🌐</div>
+      <h3 class="text-xl font-semibold">Socials</h3>
+    </a>
+    <a href="noteshub.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
+      <div class="text-red-500 text-4xl mb-2">📚</div>
+      <h3 class="text-xl font-semibold">NotesHub</h3>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 py-4 text-center text-gray-600 mt-10">
+    © 2025 Cytra Hub. All rights reserved.
+  </footer>
+
+  <script>
+    // Live Date & Time
+    function updateDateTime() {
+      const now = new Date();
+      document.getElementById('datetime').innerText =
+        now.toLocaleString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Random Quotes
+    const quotes = [
+      "Dream big. Work hard. Stay humble.",
+      "Success is no accident. Keep going!",
+      "Do something today that your future self will thank you for.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Stay hungry. Stay foolish. - Steve Jobs"
+    ];
+    document.getElementById('quote').innerText =
+      quotes[Math.floor(Math.random() * quotes.length)];
+  </script>
+</body>
+</html>
 
