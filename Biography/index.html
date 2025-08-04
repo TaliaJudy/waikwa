@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>✨ Cytra's Legendary Bio ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: #000;
+    min-height: 100vh;
+  }
+  canvas#stars {
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    z-index: -1;
+  }
+  h1, h2 { text-shadow: 0 0 10px #0ff; }
+  h1 {
+    font-size: 2.8rem;
+    padding-top:2rem;
+    background: linear-gradient(90deg, #0ff, #0cc, #0ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s infinite alternate;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
+  }
+  .section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    animation: fadeIn 1s ease both;
+  }
+  @keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px);}
+    to { opacity:1; transform:translateY(0);}
+  }
+  a.social {
+    color: #0ff;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0ff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    display:inline-block;
+  }
+  a.social:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 10px #0ff;
+    transform: scale(1.1);
+  }
+  iframe { width:100%; border:none; border-radius:12px; }
+  #leaveReviewButton {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(45deg,#0ff,#0cc);
+    color: #000;
+    border: none;
+    border-radius:50px;
+    box-shadow:0 0 12px rgba(0,255,255,0.6);
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    z-index:999;
+  }
+  #leaveReviewButton:hover { transform: scale(1.1); box-shadow:0 0 24px #0ff; }
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<h1>👋 Welcome to Cytra's Legendary Bio</h1>
+
+<div class="section">
+  <h2>👤 About Me</h2>
+  <p>Hey there, I'm <strong>Jack (Cytra)</strong>, 16 years old, born on <strong>March 30, 2009</strong>. I live in <strong>Ruaka, Nairobi</strong> and study at <strong>Baricho High School</strong>. Explore my links, maps & leave a review below! 🌟</p>
+</div>
+
+<div class="section">
+  <h2>📍 Where I Live</h2>
+  <iframe src="https://www.google.com/maps?q=Ruaka,+Nairobi&output=embed" height="250"></iframe>
+</div>
+
+<div class="section">
+  <h2>🏫 My School</h2>
+  <iframe src="https://www.google.com/maps?q=Baricho+High+School,+Kirinyaga&output=embed" height="250"></iframe>
+</div>
+
+<div class="section">
+  <h2>🌐 My Other Links</h2>
+  <a href="https://cytrapics.vercel.app/" class="social">📷 My Pics</a>
+  <a href="https://socialmedia-m7z4.onrender.com/" class="social">🔗 Social Media</a>
+  <a href="https://ig-ban.vercel.app/" class="social">🚫 IG Ban Tool</a>
+  <a href="https://t.me/Cytrak9_bot" class="social">🤖 Telegram Bot</a>
+</div>
+
+<!-- 💬 Review Section -->
+<div id="review-section" class="section">
+  <h2>💬 Leave a Review</h2>
+  <p>Your feedback means a lot — write me a quick review:</p>
+  <script type="text/javascript" src="https://form.jotform.com/jsform/251761668113054"></script>
+</div>
+
+<!-- 💬 Floating review button -->
+<a href="#review-section" id="leaveReviewButton">💬 Leave a Review</a>
+
+<script>
+  // 🌟 Starfield background
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let starsArray = Array.from({length:100}).map(() => ({x:Math.random()*innerWidth,y:Math.random()*innerHeight,speed:0.5+Math.random()}));
+  function resizeStars(){ canvas.width=innerWidth; canvas.height=innerHeight; }
+  window.addEventListener('resize',resizeStars); resizeStars();
+  function drawStars() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='white';
+    starsArray.forEach(star=>{
+      star.y += star.speed;
+      if(star.y>innerHeight) star.y=0;
+      ctx.beginPath(); ctx.arc(star.x,star.y,1,0,Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(drawStars);
+  }
+  drawStars();
+
+  // Smooth scroll
+  document.getElementById('leaveReviewButton').addEventListener('click',e=>{
+    e.preventDefault();
+    document.getElementById('review-section').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+</body>
+  </html>
