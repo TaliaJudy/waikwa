@@ -1,86 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cytra Hub - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cytra Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-    header {
-      background: #007BFF;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    .links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 30px;
-      text-decoration: none;
-      color: #007BFF;
-      border: 2px solid #007BFF;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-    .links a:hover {
-      background: #007BFF;
-      color: #fff;
-    }
-    footer {
-      background: #ddd;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
+    body { font-family: 'Poppins', sans-serif; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Welcome to Cytra Hub</h1>
-    <p>Your personal hub for everything Cytra</p>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center">Cytra Hub</h1>
+    <p class="text-center mt-2 text-blue-100">Welcome to your central hub</p>
   </header>
 
-  <main>
-    <div class="links">
-      <a href="biography.html">Biography</a>
-      <a href="pics.html">Pics</a>
-      <a href="socials.html">Socials</a>
-      <a href="noteshub.html">NotesHub</a>
-    </div>
-  </main>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Card Template -->
+    <a href="Biography/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-blue-600 text-4xl mb-4">📖</div>
+      <h2 class="text-xl font-semibold mb-2">Biography</h2>
+      <p class="text-gray-500">See personal details and info</p>
+    </a>
 
-  <footer>
-    © 2025 Cytra Hub. All rights reserved.
-  </footer>
-</body>
-</html>
-    <a href="index.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
-      <div class="text-red-500 text-4xl mb-2">📚</div>
-      <h3 class="text-xl font-semibold">NotesHub</h3>
+    <a href="Ig-prank/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-pink-500 text-4xl mb-4">🎭</div>
+      <h2 class="text-xl font-semibold mb-2">Ig Prank</h2>
+      <p class="text-gray-500">Funny Instagram prank page</p>
+    </a>
+
+    <a href="MAIN SCREEN/main screen" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-green-500 text-4xl mb-4">🖥️</div>
+      <h2 class="text-xl font-semibold mb-2">Main Screen</h2>
+      <p class="text-gray-500">Main UI screen preview</p>
+    </a>
+
+    <a href="Pics/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-yellow-500 text-4xl mb-4">🖼️</div>
+      <h2 class="text-xl font-semibold mb-2">Pics</h2>
+      <p class="text-gray-500">View all pictures gallery</p>
+    </a>
+
+    <a href="Socials/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-indigo-500 text-4xl mb-4">🌐</div>
+      <h2 class="text-xl font-semibold mb-2">Socials</h2>
+      <p class="text-gray-500">All social links</p>
+    </a>
+
+    <a href="noteshub/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-red-500 text-4xl mb-4">📚</div>
+      <h2 class="text-xl font-semibold mb-2">NotesHub</h2>
+      <p class="text-gray-500">School notes & resources</p>
     </a>
   </main>
 
