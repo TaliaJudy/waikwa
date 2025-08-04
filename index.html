@@ -4,36 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cytra Hub - Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background: #007BFF;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      text-decoration: none;
+      color: #007BFF;
+      border: 2px solid #007BFF;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .links a:hover {
+      background: #007BFF;
+      color: #fff;
+    }
+    footer {
+      background: #ddd;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <!-- Header -->
-  <header class="bg-blue-600 text-white py-10 shadow-md text-center">
-    <h1 class="text-4xl font-bold">Welcome to Cytra Hub</h1>
-    <p class="mt-2 text-blue-100 text-lg">Your personal hub for all things Cytra</p>
+<body>
+  <header>
+    <h1>Welcome to Cytra Hub</h1>
+    <p>Your personal hub for everything Cytra</p>
   </header>
 
-  <!-- Quick Links -->
-  <main class="max-w-5xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <a href="dashboard.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
-      <div class="text-green-500 text-4xl mb-2">📊</div>
-      <h3 class="text-xl font-semibold">Dashboard</h3>
-    </a>
-    <a href="index.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
-      <div class="text-blue-500 text-4xl mb-2">📖</div>
-      <h3 class="text-xl font-semibold">Biography</h3>
-    </a>
-    <a href="index.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
-      <div class="text-yellow-500 text-4xl mb-2">🖼️</div>
-      <h3 class="text-xl font-semibold">Pics</h3>
-    </a>
-    <a href="index.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
-      <div class="text-indigo-500 text-4xl mb-2">🌐</div>
-      <h3 class="text-xl font-semibold">Socials</h3>
-    </a>
+  <main>
+    <div class="links">
+      <a href="biography.html">Biography</a>
+      <a href="pics.html">Pics</a>
+      <a href="socials.html">Socials</a>
+      <a href="noteshub.html">NotesHub</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Cytra Hub. All rights reserved.
+  </footer>
+</body>
+</html>
     <a href="index.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition text-center">
       <div class="text-red-500 text-4xl mb-2">📚</div>
       <h3 class="text-xl font-semibold">NotesHub</h3>
