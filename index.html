@@ -70,9 +70,18 @@
 
   <script>
     const tracks = [
-      { name: "Backbencher", url: "songs/Backbencher.m4a" },
-      { name: "Sexercise", url: "songs/Sexercise.m4a" },
-      { name: "Sha La La Sunday Mawnin", url: "songs/Sha La La Sunday Mawnin.m4a" }
+      { name: "Backbencher", url: "Backbencher.m4a" },
+      { name: "Bad Gyal ft Skillibeng, Jucee Froot, Tommy Lee Divas", url: "Bad_Gyal_feat_Skillibeng,_Jucee_Froot_Tommy_Lee_Divas_fe.m4a" },
+      { name: "Beamer (Bad Boys)", url: "Beamer (Bad Boys).m4a" },
+      { name: "Bully Van (feat. Badman Bright)", url: "Bully Van (feat. Badman Bright).m4a" },
+      { name: "Crocodile Teeth", url: "Crocodile Teeth.m4a" },
+      { name: "Likkle London", url: "Likkle London.m4a" },
+      { name: "Pump Up", url: "Pump Up.m4a" },
+      { name: "Shoka", url: "SHOKA (1).m4a" },
+      { name: "Sexercise", url: "Sexercise.m4a" },
+      { name: "Sha La La (Sunday Mawnin)", url: "Sha La La (Sunday Mawnin).m4a" },
+      { name: "What It Do", url: "What It Do.m4a" },
+      { name: "Balance", url: "Balance.m4a" }
     ];
 
     let currentTrack = 0;
@@ -82,25 +91,15 @@
     const nextBtn = document.getElementById("nextBtn");
     const prevBtn = document.getElementById("prevBtn");
 
-    function showBuffering() {
-      trackTitle.innerHTML = `<span class="animate-pulse">Buffering… ⏳</span>`;
-    }
-
     function loadTrack(index, autoplay = false) {
-      showBuffering();
       audio.src = tracks[index].url;
-      audio.preload = "auto";
-
-      audio.addEventListener("canplaythrough", function autoPlayOnce() {
-        trackTitle.textContent = tracks[index].name;
-        if (autoplay) {
-          audio.play();
-          playPauseBtn.textContent = "⏸️";
-        } else {
-          playPauseBtn.textContent = "▶️";
-        }
-        audio.removeEventListener("canplaythrough", autoPlayOnce);
-      });
+      trackTitle.textContent = tracks[index].name;
+      if (autoplay) {
+        audio.play();
+        playPauseBtn.textContent = "⏸️";
+      } else {
+        playPauseBtn.textContent = "▶️";
+      }
     }
 
     playPauseBtn.addEventListener("click", () => {
