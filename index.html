@@ -1,65 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cytra Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #ffe6f0, #f3e7ff); }
+    /* Marquee Effect for Track Name */
+    .marquee {
+      overflow: hidden;
+      position: relative;
+      white-space: nowrap;
+    }
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0%); }
+      to { transform: translateX(-100%); }
+    }
+    /* Progress Bar Styling */
+    .progress-container {
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .progress-bar {
+      height: 100%;
+      background: white;
+      border-radius: 2px;
+      width: 0%;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="text-gray-900">
+
   <!-- Header -->
-  <header class="bg-blue-600 text-white py-6 shadow-md">
-    <h1 class="text-3xl font-bold text-center">Cytra Hub</h1>
-    <p class="text-center mt-2 text-blue-100">Welcome to your central hub</p>
+  <header class="bg-gradient-to-r from-pink-400 to-purple-500 text-white py-6 shadow-md rounded-b-3xl">
+    <h1 class="text-4xl font-bold text-center">Cytra Hub</h1>
+    <p class="text-center mt-2 text-pink-100 font-medium">Welcome to your central hub</p>
   </header>
 
   <!-- Main Content -->
   <main class="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Card Template -->
-    <a href="Biography/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-blue-600 text-4xl mb-4">📖</div>
+    <a href="Biography/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-pink-500 text-4xl mb-4">📖</div>
       <h2 class="text-xl font-semibold mb-2">Biography</h2>
       <p class="text-gray-500">See personal details and info</p>
     </a>
-
-    <a href="Ig-prank/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-pink-500 text-4xl mb-4">🎭</div>
+    <a href="Ig-prank/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-purple-500 text-4xl mb-4">🎭</div>
       <h2 class="text-xl font-semibold mb-2">Ig Prank</h2>
       <p class="text-gray-500">Funny Instagram prank page</p>
     </a>
-
-    <a href="MAIN SCREEN/main screen" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-green-500 text-4xl mb-4">🖥️</div>
+    <a href="MAIN SCREEN/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-pink-500 text-4xl mb-4">🖥️</div>
       <h2 class="text-xl font-semibold mb-2">Main Screen</h2>
       <p class="text-gray-500">Main UI screen preview</p>
     </a>
-
-    <a href="Pics/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-yellow-500 text-4xl mb-4">🖼️</div>
+    <a href="Pics/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-purple-500 text-4xl mb-4">🖼️</div>
       <h2 class="text-xl font-semibold mb-2">Pics</h2>
       <p class="text-gray-500">View all pictures gallery</p>
     </a>
-
-    <a href="Socials/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-indigo-500 text-4xl mb-4">🌐</div>
+    <a href="Socials/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-pink-500 text-4xl mb-4">🌐</div>
       <h2 class="text-xl font-semibold mb-2">Socials</h2>
       <p class="text-gray-500">All social links</p>
     </a>
-
-    <a href="noteshub/index.html" class="block bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition p-6 text-center">
-      <div class="text-red-500 text-4xl mb-4">📚</div>
+    <a href="noteshub/index.html" class="block bg-white rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition p-6 text-center">
+      <div class="text-purple-500 text-4xl mb-4">📚</div>
       <h2 class="text-xl font-semibold mb-2">NotesHub</h2>
       <p class="text-gray-500">School notes & resources</p>
     </a>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-200 py-4 text-center text-gray-600 mt-10">
-    © 2025 Cytra Hub. All rights reserved.
+  <footer class="bg-white/60 backdrop-blur-md py-4 text-center text-gray-600 mt-10 rounded-t-3xl">
+    © 2025 Cytra Hub. All rights reserved. <br>
+    Website by <a href="https://cytra.vercel.app" class="text-pink-600 font-semibold hover:underline">Cytra</a>
   </footer>
+
+  <!-- Girly Spotify-Style Music Dock -->
+  <div id="music-dock" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-400 to-purple-500 text-white 
+       rounded-full shadow-2xl flex items-center justify-between px-6 py-3 w-11/12 md:w-2/3 max-w-2xl">
+    
+    <div class="w-1/3 marquee font-semibold text-sm">
+      <span id="track-title">Loading...</span>
+    </div>
+
+    <div class="flex items-center space-x-6">
+      <button id="prevBtn" class="hover:scale-125 transition transform">⏮</button>
+      <button id="playPauseBtn" class="text-2xl hover:scale-125 transition transform">▶️</button>
+      <button id="nextBtn" class="hover:scale-125 transition transform">⏭</button>
+    </div>
+
+    <div class="w-1/3 flex flex-col items-end">
+      <div class="progress-container w-full mb-1">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <span id="time" class="text-xs text-white/90">0:00 / 0:00</span>
+    </div>
+  </div>
+
+  <audio id="audio"></audio>
+
+  <script>
+    const tracks = [
+      { name: "Brazilian Phonk Mana", url: "https://www.dropbox.com/scl/fi/fra4id7wwsaunsmqefcwk/BRAZILIAN-PHONK-MANA.m4a?dl=1" },
+      { name: "Sexercise", url: "https://www.dropbox.com/scl/fi/rvnz1hykw542cpawqmjhb/Sexercise.m4a?dl=1" },
+      { name: "Sha-La-La Sunday Mawnin", url: "https://www.dropbox.com/scl/fi/on2p04cfm7ymqqkfdn6gg/Sha-La-La-Sunday-Mawnin.m4a?dl=1" },
+      { name: "Balance", url: "https://www.dropbox.com/scl/fi/n9iaxnnnbdrplin5lb2uf/Balance.m4a?dl=1" },
+      { name: "Hood", url: "https://www.dropbox.com/scl/fi/iahteu81b9ps5zbkthbj3/Hood.m4a?dl=1" },
+      { name: "Thugnificent", url: "https://www.dropbox.com/scl/fi/zbdrqwmo0to2l399r7npq/Thugnificent.m4a?dl=1" },
+      { name: "SHOKA", url: "https://www.dropbox.com/scl/fi/4v6g8ozclqmrylrag7v6f/SHOKA.m4a?dl=1" },
+      { name: "Pump Up", url: "https://www.dropbox.com/scl/fi/2id4bgy7pugjq4nvqyik8/Pump-Up.m4a?dl=1" }
+    ];
+
+    let currentTrack = 0;
+    const audio = document.getElementById("audio");
+    const trackTitle = document.getElementById("track-title");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const progressBar = document.getElementById("progressBar");
+    const timeDisplay = document.getElementById("time");
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60).toString().padStart(2, "0");
+      return `${m}:${s}`;
+    }
+
+    function loadTrack(index) {
+      audio.src = tracks[index].url;
+      trackTitle.textContent = tracks[index].name;
+      audio.play().then(() => {
+        playPauseBtn.textContent = "⏸️";
+      }).catch(() => playPauseBtn.textContent = "▶️");
+    }
+
+    function togglePlayPause() {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = "⏸️";
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = "▶️";
+      }
+    }
+
+    playPauseBtn.addEventListener("click", togglePlayPause);
+    nextBtn.addEventListener("click", () => {
+      currentTrack = (currentTrack + 1) % tracks.length;
+      loadTrack(currentTrack);
+    });
+    prevBtn.addEventListener("click", () => {
+      currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+      loadTrack(currentTrack);
+    });
+
+    audio.addEventListener("ended", () => {
+      currentTrack = (currentTrack + 1) % tracks.length;
+      loadTrack(currentTrack);
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      if (!isNaN(audio.duration)) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + "%";
+        timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+      }
+    });
+
+    // Load first track
+    loadTrack(currentTrack);
+  </script>
 </body>
 </html>
